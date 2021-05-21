@@ -1,6 +1,7 @@
 package com.tracker.customerapp.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,8 +26,8 @@ public class CustomerController {
 	}
 	
 	@GetMapping("customer/{id}")
-	public Customer getCustomerById(@PathVariable(value="id") int id) {
-		return customerRepo.findById(id).get();
+	public Optional<Customer> getCustomerById(@PathVariable(value="id") int id) {
+		return customerRepo.findById(id);
 	}
 	
 	@GetMapping("get/customer")

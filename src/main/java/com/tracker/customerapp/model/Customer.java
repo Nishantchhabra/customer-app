@@ -26,6 +26,18 @@ public class Customer {
 	private String lastName;
 	
 	private String dob;
+	
+	public Customer() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Customer(int id, String firstName, String lastName, String dob) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.dob = dob;
+	}
 
 	public int getId() {
 		return id;

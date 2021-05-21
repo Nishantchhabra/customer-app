@@ -28,20 +28,16 @@ public class CustomerControllerTests {
 		cc.welcome("Nishant");
 	}
 	
-/*	@Test
+	@Test
 	public void testgetCustomerById() {
-		Mockito.when(repo.findById(1).get()).thenReturn		
-		Mockito.when(op.get()).thenReturn(customer);
+		Customer customer = new Customer(1,"Nishant","Chhabra","10th July");
+		Mockito.when(repo.findById(1)).thenReturn(Optional.of(customer));	
 		cc.getCustomerById(1);
 	}
 	
-*/	@Test
+	@Test
 	public void testgetAllCustomer() {
-		Customer customer = new Customer();
-		customer.setDob("10th july");
-		customer.setFirstName("Nishant");
-		customer.setId(1);
-		customer.setLastName("Chhabra");
+		Customer customer = new Customer(1,"Nishant","Chhabra","10th July");
 		List<Customer> customers = new ArrayList<>();
 		customers.add(customer);
 		Mockito.when(repo.findAll()).thenReturn(customers);
